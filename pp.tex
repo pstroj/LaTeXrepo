@@ -1,0 +1,144 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{makra}
+
+\author{M.~Godlewska}
+\title{Ćwiczenia z \LaTeXe}
+\date{01.12.2014}
+
+\linespread{1.2}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Mój pierwszy rozdział}
+\label{sec:MojPierwszyRozdzial}
+
+\TeX~jest programem komputerowym stworzonym przez Donalda E. Knutha. Jest przeznaczony do składu tekstów oraz wzorów matematycznych.
+Knuth rozpoczał prace nad \TeX em w 1977 roku, aby wykorzystać potencjał
+składu cyfrowego, stosowanego wówczas na coraz szerszą skalę w poligrafii.
+Miał też nadzieję, że uda się odwrócić tendencję do pogarszania się jakości
+typograficznej, co uwidaczniało się w jego własnych książkach i artykułach.
+W używanej obecnie postaci \TeX~został udostępniony w roku 1982, a niewielkie
+rozszerzenie, dotyczące ośmiobitowego kodowania znaków, pojawiło
+się w roku 1989. \TeX~ma renomę programu nadzwyczaj stabilnego, pracującego
+na różnego rodzaju sprzęcie oraz praktycznie wolnego od błedów.
+Numery wersji \TeX a zbiegają do liczby $\pi$, a obecny wynosi 3,14159.
+
+Słowo \TeX~należy wymawiać „tech”. Zgłoska „ch” ma związek z tym, że
+znak X przypomina grecką literę „chi” ($\chi$). \TeX~jest też pierwszą sylabą greckiego
+słowa texnologia (technologia). W sytuacjach, w których nie można
+zapisywac nazwy \TeX~z charakterystycznym obniżeniem litery E, należy
+zamiennie używać wersji TeX \cite{niekrotkie}.
+
+Teraz będzie rozdział \ref{sec:MatmaWLaTeXU}
+
+\section{Matma w \LaTeX u}
+\label{sec:MatmaWLaTeXU}
+
+Oto kilka wzorków \eqref{eq:nr1} i \eqref{eq:nr2}:\\
+najpierw $\frac{1}{8}$  i jedziemy dalej.
+$$\frac{1}{9}$$
+	\[\frac{1}{a^2}\]
+\begin{equation}
+\label{eq:nr1}
+	\frac{1}{\cos{x}}
+\end{equation}
+
+\begin{equation}
+\label{eq:nr2}
+	\frac{1}{\sqrt{2}}
+\end{equation}
+
+\subsection{Inna matma}
+\label{sec:InnaMatma}
+
+Rozwiąż układ równań \eqref{eq:nr3}:
+
+\begin{equation}
+	y = \left\{	
+	\begin{array}{ll}
+	2x_1^2 + x_2 & \textrm{jeżeli $x_1 > 0 \land x_2 >0$} \\
+	3x_1 - 5 x_2 & \textrm{jeżeli $x_1 < 0 \land x_2 <0$} \\
+	0 & \textrm{wpp}
+		
+	\end{array} \right.
+	\label{eq:nr3}
+\end{equation}
+\\
+A teraz dana jest macierz:
+\begin{displaymath}
+\mathbf{X} =
+\left[ \begin{array}{ccc}
+x_{11} & x_{12} & \ldots \\
+x_{21} & x_{22} & \ldots \\
+\vdots & \vdots & \ddots
+\end{array} \right]
+\end{displaymath}
+
+\newpage
+
+\section{Rysunki}
+\label{sec:Rysunki}
+Jaki fajny jest:
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.50\textwidth]{images.jpg}
+	\caption{Fajny \LaTeX}
+	\label{fig:images}
+\end{figure}
+\\
+A to mój własny rysunek wektorowy:
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.40\textwidth]{sloneczko.pdf}
+	\caption{Słoneczko}
+	\label{fig:sloneczko}
+\end{figure}
+\\
+Po rysunkach \ref{fig:images} i \ref{fig:sloneczko} może coś zakodujemy:
+\begin{figure}[!ht]
+\centering
+\setlength{\unitlength}{0.75mm}
+\begin{picture}(60,40)
+\put(30,20){\vector(1,0){30}}
+\put(30,20){\vector(4,1){20}}
+\put(30,20){\vector(3,1){25}}
+\put(30,20){\vector(2,1){30}}
+\put(30,20){\vector(1,2){10}}
+\thicklines
+\put(30,20){\vector(-4,1){30}}
+\put(30,20){\vector(-1,4){5}}
+\thinlines
+\put(30,20){\vector(-1,-4){5}}
+\end{picture}
+\caption{Strzałeczki \cite{niekrotkie}}
+\label{fig:strzaleczki}
+\end{figure}
+
+\section{Punktujemy}
+\label{sec:Punktujemy}
+Lista punktowana:
+\begin{itemize}
+	\item pierwszy
+	\item[--] drugi
+	\item[+] trzeci
+\end{itemize}
+Lista numerowana:
+\begin{enumerate}
+	\item coś
+	
+	\begin{enumerate}
+		\item coś innego
+		\item jeszcze coś innego
+		
+	\end{enumerate}
+	\item i jeszcze coś 
+\end{enumerate}
+
+\bibliographystyle{plain}
+\bibliography{mojaBib}
+ 
+\end{document}

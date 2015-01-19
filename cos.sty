@@ -1,0 +1,16 @@
+\ProvidesPackage{makra}
+
+\usepackage{polski}
+\usepackage[UTF8]{inputenc}
+\usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
+
+\usepackage[bookmarksnumbered,colorlinks,plainpages,backref]{hyperref} %wersja CD
+\hypersetup{
+ citecolor=[rgb]{0, 0.6, 0},
+ linkcolor=[rgb]{0.8,0,0},
+ urlcolor=blue}
+
+%kropeczki po numerach rozdziałów i literowe podrozdziały
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\alph{subsection})}
